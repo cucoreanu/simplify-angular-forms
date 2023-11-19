@@ -1,0 +1,5 @@
+<label class="form-label" [for]="uuid">{{label}}</label>
+<input class="form-control" [id]="uuid" [placeholder]="placeholder" type="text" value="">
+<div class="invalid-feedback" *ngIf="invalidFeedbackMessage">
+  {{invalidFeedbackMessage}}
+</div>

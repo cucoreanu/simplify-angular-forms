@@ -5,11 +5,7 @@
       <form class="needs-validation" novalidate>
         <div class="row g-3">
           <div class="col-sm-6">
-            <label class="form-label" for="firstName">First name</label>
-            <input class="form-control" id="firstName" placeholder="" required type="text" value="">
-            <div class="invalid-feedback">
-              Valid first name is required.
-            </div>
+            <big-text-input label="First name"></big-text-input>
           </div>
 
           <div class="col-sm-6">
@@ -99,22 +95,6 @@
         <hr class="my-4">
 
         <h4 class="mb-3">Payment</h4>
-
-        <div class="my-3">
-          <div class="form-check">
-            <input checked class="form-check-input" id="credit" name="paymentMethod" required type="radio">
-            <label class="form-check-label" for="credit">Credit card</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" id="debit" name="paymentMethod" required type="radio">
-            <label class="form-check-label" for="debit">Debit card</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" id="paypal" name="paymentMethod" required type="radio">
-            <label class="form-check-label" for="paypal">PayPal</label>
-          </div>
-        </div>
-
         <div class="row gy-3">
           <div class="col-md-6">
             <label class="form-label" for="cc-name">Name on card</label>
