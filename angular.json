@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "big",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/bootstrap-integration/bootstrap-integration.scss"
             ],
             "scripts": []
           },

@@ -1,0 +1,159 @@
+<main class="container-sm pt-5">
+  <div class="row g-5">
+    <div class="col-12 col-lg-6">
+      <h4 class="mb-3">Billing address</h4>
+      <form class="needs-validation" novalidate>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label class="form-label" for="firstName">First name</label>
+            <input class="form-control" id="firstName" placeholder="" required type="text" value="">
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <label class="form-label" for="lastName">Last name</label>
+            <input class="form-control" id="lastName" placeholder="" required type="text" value="">
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label" for="username">Username</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text">&#64;</span>
+              <input class="form-control" id="username" placeholder="Username" required type="text">
+              <div class="invalid-feedback">
+                Your username is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label" for="email">Email <span class="text-body-secondary">(Optional)</span></label>
+            <input class="form-control" id="email" placeholder="you@example.com" type="email">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label" for="address">Address</label>
+            <input class="form-control" id="address" placeholder="1234 Main St" required type="text">
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label" for="address2">Address 2 <span
+              class="text-body-secondary">(Optional)</span></label>
+            <input class="form-control" id="address2" placeholder="Apartment or suite" type="text">
+          </div>
+
+          <div class="col-md-5">
+            <label class="form-label" for="country">Country</label>
+            <select class="form-select" id="country" required>
+              <option value="">Choose...</option>
+              <option>United States</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label" for="state">State</label>
+            <select class="form-select" id="state" required>
+              <option value="">Choose...</option>
+              <option>California</option>
+            </select>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label" for="zip">Zip</label>
+            <input class="form-control" id="zip" placeholder="" required type="text">
+            <div class="invalid-feedback">
+              Zip code required.
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="form-check">
+          <input class="form-check-input" id="same-address" type="checkbox">
+          <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" id="save-info" type="checkbox">
+          <label class="form-check-label" for="save-info">Save this information for next time</label>
+        </div>
+
+        <hr class="my-4">
+
+        <h4 class="mb-3">Payment</h4>
+
+        <div class="my-3">
+          <div class="form-check">
+            <input checked class="form-check-input" id="credit" name="paymentMethod" required type="radio">
+            <label class="form-check-label" for="credit">Credit card</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" id="debit" name="paymentMethod" required type="radio">
+            <label class="form-check-label" for="debit">Debit card</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" id="paypal" name="paymentMethod" required type="radio">
+            <label class="form-check-label" for="paypal">PayPal</label>
+          </div>
+        </div>
+
+        <div class="row gy-3">
+          <div class="col-md-6">
+            <label class="form-label" for="cc-name">Name on card</label>
+            <input class="form-control" id="cc-name" placeholder="" required type="text">
+            <small class="text-body-secondary">Full name as displayed on card</small>
+            <div class="invalid-feedback">
+              Name on card is required
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label" for="cc-number">Credit card number</label>
+            <input class="form-control" id="cc-number" placeholder="" required type="text">
+            <div class="invalid-feedback">
+              Credit card number is required
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label" for="cc-expiration">Expiration</label>
+            <input class="form-control" id="cc-expiration" placeholder="" required type="text">
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label" for="cc-cvv">CVV</label>
+            <input class="form-control" id="cc-cvv" placeholder="" required type="text">
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <button class="w-100 btn btn-primary btn-lg col-12" type="submit">Continue to checkout</button>
+      </form>
+    </div>
+  </div>
+</main>
