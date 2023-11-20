@@ -1,12 +1,13 @@
 <main class="container-sm pt-5">
   <div class="row g-5">
-    <div class="col-12 col-lg-6">
-      <h4 class="mb-3">Billing address</h4>
-      <form class="needs-validation" novalidate>
+    <form class="col-12 col-lg-6 needs-validation" novalidate>
+
+      <div class="billing-address">
+        <h4 class="mb-3">Billing address</h4>
         <div class="row g-3">
 
           <div class="col-sm-6">
-            <big-text-input label="First name" [formControl]="firstNameControl"></big-text-input>
+            <big-text-input [formControl]="firstNameControl" label="First name"></big-text-input>
           </div>
 
           <div class="col-sm-6">
@@ -94,7 +95,9 @@
         </div>
 
         <hr class="my-4">
+      </div>
 
+      <div class="payment">
         <h4 class="mb-3">Payment</h4>
         <div class="row gy-3">
           <div class="col-md-6">
@@ -132,9 +135,9 @@
         </div>
 
         <hr class="my-4">
+      </div>
 
-        <button class="w-100 btn btn-primary btn-lg col-12" type="submit">Continue to checkout</button>
-      </form>
-    </div>
+      <button class="w-100 btn btn-primary btn-lg col-12" type="button">Continue to checkout</button>
+    </form>
   </div>
 </main>
