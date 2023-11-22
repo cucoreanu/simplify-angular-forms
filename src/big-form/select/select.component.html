@@ -1,0 +1,4 @@
+<label class="form-label" [for]="uuid">{{label}}</label>
+<select class="form-select" [id]="uuid" [formControl]="formControl">
+  <option [value]="option.value" *ngFor="let option of options">{{option.label}}</option>
+</select>

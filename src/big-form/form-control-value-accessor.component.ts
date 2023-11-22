@@ -1,7 +1,6 @@
 import { AbstractControlValueAccessor } from "./abstract-control-value-accessor";
-import {FormControl, UntypedFormControl} from "@angular/forms";
-import { Subscription } from "rxjs";
-import { Directive, OnDestroy, OnInit } from "@angular/core";
+import {FormControl} from "@angular/forms";
+import {DestroyRef, Directive, Inject, OnDestroy, OnInit} from "@angular/core";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
 /**
@@ -25,9 +24,13 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 @Directive()
 export abstract class FormControlValueAccessorComponent<T> extends AbstractControlValueAccessor<T> implements OnInit {
 
-  abstract formControl: FormControl<T>;
+  constructor(protected destroyRef: DestroyRef) {
+    super();
+  }
 
-  writeValue(obj: any): void {
+  abstract formControl: FormControl<T | null>;
+
+  writeValue(obj: T): void {
     this.formControl.setValue(obj, { emitEvent: false });
   }
 
@@ -38,7 +41,7 @@ export abstract class FormControlValueAccessorComponent<T> extends AbstractContr
 
   ngOnInit(): void {
     this.formControl.valueChanges
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(value => this.onChanged(value));
   }
 

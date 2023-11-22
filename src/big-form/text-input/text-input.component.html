@@ -1,5 +1,8 @@
 <label class="form-label" [for]="uuid">{{label}}</label>
-<input class="form-control" [id]="uuid" [placeholder]="placeholder" type="text" [formControl]="formControl">
-<div class="invalid-feedback" *ngIf="invalidFeedbackMessage">
-  {{invalidFeedbackMessage}}
+<div class="input-group has-validation">
+  <span class="input-group-text" *ngIf="inputGroupText">{{inputGroupText}}</span>
+  <input class="form-control" [id]="uuid" [placeholder]="placeholder" type="text" [formControl]="formControl">
+  <div class="invalid-feedback" *ngIf="invalidFeedbackMessage">
+    {{invalidFeedbackMessage}}
+  </div>
 </div>

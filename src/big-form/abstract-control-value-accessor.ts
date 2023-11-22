@@ -1,7 +1,7 @@
 import { ControlValueAccessor } from "@angular/forms";
 
 export abstract class AbstractControlValueAccessor<T> implements ControlValueAccessor {
-  onChanged!: (value: T) => void;
+  onChanged!: (value: T | null) => void; // the new value can be null
   onTouched!: () => void;
 
   registerOnChange(fn: any): void {
@@ -12,5 +12,5 @@ export abstract class AbstractControlValueAccessor<T> implements ControlValueAcc
     this.onTouched = fn;
   }
 
-  abstract writeValue(obj: any): void;
+  abstract writeValue(obj: T): void;
 }

@@ -3,26 +3,26 @@ import {CommonModule} from '@angular/common';
 import {v4 as uuid} from 'uuid';
 import {FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule} from "@angular/forms";
 import {FormControlValueAccessorComponent} from "../form-control-value-accessor.component";
+import {SelectItem} from "./select-item";
 
 @Component({
-  selector: 'big-text-input',
+  selector: 'big-select',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './text-input.component.html',
+  templateUrl: './select.component.html',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TextInputComponent),
+    useExisting: forwardRef(() => SelectComponent),
     multi: true
   }]
 })
-export class TextInputComponent extends FormControlValueAccessorComponent<string> {
+export class SelectComponent extends FormControlValueAccessorComponent<string> {
 
   formControl = new FormControl<string>('', {nonNullable: true});
   readonly uuid: string = uuid();
 
-  @Input() label = '';
-  @Input() placeholder = '';
-  @Input() invalidFeedbackMessage = '';
-  @Input() inputGroupText = '';
-
+  @Input() options: SelectItem[] = [];
+  @Input() label: string = '';
+  @Input() placeholder: string = '';
+  @Input() invalidFeedbackMessage: string = '';
 }
