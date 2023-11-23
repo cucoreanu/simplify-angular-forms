@@ -9,11 +9,12 @@ import {getUsStateOptions} from "./us-states-options";
 import {CheckboxComponent} from "../checkbox/checkbox.component";
 import {BillingForm} from "./billing-form.model";
 import {OnlyKeysOf} from "../only-keys-of.type";
+import {ValidationResultComponent} from "../validation-result/validation-result.component";
 
 @Component({
   selector: 'big-billing-address-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TextInputComponent, SelectComponent, CheckboxComponent],
+  imports: [CommonModule, ReactiveFormsModule, TextInputComponent, SelectComponent, CheckboxComponent, ValidationResultComponent],
   templateUrl: './billing-address-form.component.html',
 })
 export class BillingAddressFormComponent implements BigFormSection<BillingForm> {
@@ -22,26 +23,22 @@ export class BillingAddressFormComponent implements BigFormSection<BillingForm> 
   readonly usStates = getUsStateOptions();
 
   form: FormGroup = this.formBuilder.group<OnlyKeysOf<BillingForm>>({
-    firstName: ['', [Validators.required, Validators.minLength(1)]],
-    lastName: ['', [Validators.required, Validators.minLength(1)]],
-    username: ['', [Validators.required, Validators.minLength(3)]],
+    firstName: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
+    username: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
-    address: ['', [Validators.required, Validators.minLength(5)]],
-    address2: ['', [Validators.required, Validators.minLength(5)]],
-    country: [this.countries.defaultValue, [Validators.required, Validators.minLength(2)]],
-    state: [this.usStates.defaultValue, [Validators.required, Validators.minLength(2)]],
-    zip: ['', [Validators.required, Validators.minLength(5)]],
+    address: ['', [Validators.required]],
+    address2: ['', [Validators.required]],
+    country: [this.countries.defaultValue, [Validators.required]],
+    state: [this.usStates.defaultValue, [Validators.required]],
+    zip: ['', [Validators.required]],
     isShippingSameAsBilling: false,
     isFormSavedForNextTime: false,
   });
 
+  @Output() valueChanges = this.form.valueChanges;
+
   constructor(private formBuilder: FormBuilder) {
   }
-
-  markAsTouched(): void {
-    this.form.markAllAsTouched();
-  }
-
-  @Output() valueChanges = this.form.valueChanges;
 
 }

@@ -10,5 +10,5 @@ export interface BigFormSection<T> {
 
   form: FormGroup<OnlyKeysOf<T>>;
 
-  valueChanges: Observable<T>
+  valueChanges: Observable<T>;
 }

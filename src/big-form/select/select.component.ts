@@ -24,5 +24,4 @@ export class SelectComponent extends FormControlValueAccessorComponent<string> {
   @Input() options: SelectItem[] = [];
   @Input() label: string = '';
   @Input() placeholder: string = '';
-  @Input() invalidFeedbackMessage: string = '';
 }

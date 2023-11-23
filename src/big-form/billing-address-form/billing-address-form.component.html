@@ -4,45 +4,55 @@
 
     <div class="col-sm-6">
       <big-text-input formControlName="firstName" label="First name"></big-text-input>
+      <big-validation-result [control]="form.controls['firstName']"></big-validation-result>
     </div>
 
     <div class="col-sm-6">
       <big-text-input formControlName="lastName" label="Last name"></big-text-input>
+      <big-validation-result [control]="form.controls['lastName']"></big-validation-result>
     </div>
 
     <div class="col-12">
-      <big-text-input formControlName="username" label="Username" inputGroupText="@"></big-text-input>
+      <big-text-input formControlName="username" inputGroupText="@" label="Username"></big-text-input>
+      <big-validation-result [control]="form.controls['username']"></big-validation-result>
     </div>
 
     <div class="col-12">
       <big-text-input formControlName="email" label="Email" placeholder="you@example.com"></big-text-input>
+      <big-validation-result [control]="form.controls['email']"></big-validation-result>
     </div>
 
     <div class="col-12">
       <big-text-input formControlName="address" label="Address" placeholder="1234 Main St"></big-text-input>
+      <big-validation-result [control]="form.controls['address']"></big-validation-result>
     </div>
 
     <div class="col-12">
       <big-text-input formControlName="address2" label="Address 2" placeholder="Apartment or suite"></big-text-input>
+      <big-validation-result [control]="form.controls['address2']"></big-validation-result>
     </div>
 
     <div class="col-md-5">
       <big-select [options]="countries.selectItems" formControlName="country" label="Country"></big-select>
+      <big-validation-result [control]="form.controls['country']"></big-validation-result>
     </div>
 
     <div class="col-md-4">
-      <big-select [options]="usStates.selectItems" formControlName="country" label="State"></big-select>
+      <big-select [options]="usStates.selectItems" formControlName="state" label="State"></big-select>
+      <big-validation-result [control]="form.controls['state']"></big-validation-result>
     </div>
 
     <div class="col-md-3">
       <big-text-input formControlName="zip" label="Zip"></big-text-input>
+      <big-validation-result [control]="form.controls['zip']"></big-validation-result>
     </div>
   </div>
 
   <hr class="my-4">
 
-  <big-checkbox label="Shipping address is the same as my billing address" formControlName="isShippingSameAsBilling"></big-checkbox>
-  <big-checkbox label="Save this information for next time" formControlName="isFormSavedForNextTime"></big-checkbox>
+  <big-checkbox formControlName="isShippingSameAsBilling"
+                label="Shipping address is the same as my billing address"></big-checkbox>
+  <big-checkbox formControlName="isFormSavedForNextTime" label="Save this information for next time"></big-checkbox>
 
   <hr class="my-4">
 </form>
