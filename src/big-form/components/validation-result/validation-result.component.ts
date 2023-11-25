@@ -40,11 +40,15 @@ export class ValidationResultComponent implements OnChanges {
 
   private handleControlChange() {
     if (!this.control) {
+      // No errors to display
       this.isErrorDisplayed.set(false);
       return;
     }
 
+    // Unsubscribe from previous control before subscribing to new one.
+    // If the control changes, we want to stop listening to the old one (will probably never happen tho).
     this.controlSubscription.unsubscribe();
+
     this.controlSubscription = this.control.valueChanges
       .pipe(
         takeUntilDestroyed(this.destroyRef)
@@ -59,6 +63,7 @@ export class ValidationResultComponent implements OnChanges {
     if (!this.control) {
       return this.isErrorDisplayed.set(false);
     }
+    // If the control is pristine, we don't want to show the error message unless the forceShowValidation flag is set.
     return this.isErrorDisplayed.set(!!this.control.errors && !this.control.pristine || this.forceShowValidation);
   }
 
@@ -66,7 +71,10 @@ export class ValidationResultComponent implements OnChanges {
     if (!this.control) {
       return this.errorMessage.set('');
     }
+    // This takes only the error key.
+    // If you need the data from the error object, you can implement a custom class for parsing.
     const errors = Object.keys(this.control.errors ?? {});
+
     if (errors.length === 0) {
       return this.errorMessage.set('');
     }

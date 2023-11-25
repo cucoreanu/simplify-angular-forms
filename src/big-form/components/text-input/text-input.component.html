@@ -1,0 +1,6 @@
+<label class="form-label" [for]="uuid">{{label}}</label>
+<div class="input-group">
+  <span class="input-group-text" *ngIf="inputGroupText">{{inputGroupText}}</span>
+  <input class="form-control" [id]="uuid" [placeholder]="placeholder" type="text" [formControl]="formControl">
+</div>
+<small class="text-body-secondary" *ngIf="controlFooterInfo">{{controlFooterInfo}}</small>

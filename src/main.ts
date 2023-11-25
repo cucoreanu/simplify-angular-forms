@@ -1,6 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './big-form/app.config';
 import { BigFormComponent } from './big-form/big-form.component';
 
-bootstrapApplication(BigFormComponent, appConfig)
+bootstrapApplication(BigFormComponent)
   .catch((err) => console.error(err));

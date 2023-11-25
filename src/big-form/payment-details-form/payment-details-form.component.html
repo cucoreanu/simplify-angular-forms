@@ -1,0 +1,26 @@
+<form [formGroup]="form" class="payment">
+  <h4 class="mb-3">Payment</h4>
+  <div class="row gy-3">
+    <div class="col-md-6">
+      <big-text-input formControlName="cardHolderName" label="Name on card" controlFooterInfo="Full name as displayed on card"></big-text-input>
+      <big-validation-result [control]="form.controls['cardHolderName']"></big-validation-result>
+    </div>
+
+    <div class="col-md-6">
+      <big-text-input formControlName="creditCardNumber" label="Credit card number"></big-text-input>
+      <big-validation-result [control]="form.controls['creditCardNumber']"></big-validation-result>
+    </div>
+
+    <div class="col-md-3">
+      <big-text-input formControlName="expirationDate" label="Expiration"></big-text-input>
+      <big-validation-result [control]="form.controls['expirationDate']"></big-validation-result>
+    </div>
+
+    <div class="col-md-3">
+      <big-text-input formControlName="cvv" label="CVV"></big-text-input>
+      <big-validation-result [control]="form.controls['cvv']"></big-validation-result>
+    </div>
+  </div>
+
+  <hr class="my-4">
+</form>

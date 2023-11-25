@@ -31,7 +31,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/bootstrap-integration/bootstrap-integration.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },

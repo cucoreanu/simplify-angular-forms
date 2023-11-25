@@ -4,45 +4,7 @@
 
       <big-billing-address-form (valueChanges)="onBillingAddressFormChange($event)"></big-billing-address-form>
 
-      <div class="payment">
-        <h4 class="mb-3">Payment</h4>
-        <div class="row gy-3">
-          <div class="col-md-6">
-            <label class="form-label" for="cc-name">Name on card</label>
-            <input class="form-control" id="cc-name" placeholder="" required type="text">
-            <small class="text-body-secondary">Full name as displayed on card</small>
-            <div class="invalid-feedback">
-              Name on card is required
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <label class="form-label" for="cc-number">Credit card number</label>
-            <input class="form-control" id="cc-number" placeholder="" required type="text">
-            <div class="invalid-feedback">
-              Credit card number is required
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <label class="form-label" for="cc-expiration">Expiration</label>
-            <input class="form-control" id="cc-expiration" placeholder="" required type="text">
-            <div class="invalid-feedback">
-              Expiration date required
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <label class="form-label" for="cc-cvv">CVV</label>
-            <input class="form-control" id="cc-cvv" placeholder="" required type="text">
-            <div class="invalid-feedback">
-              Security code required
-            </div>
-          </div>
-        </div>
-
-        <hr class="my-4">
-      </div>
+      <big-payment-details-form (valueChanges)="onPaymentDetailsFormChange($event)"></big-payment-details-form>
 
       <button class="w-100 btn btn-primary btn-lg col-12" type="button">Continue to checkout</button>
     </form>
@@ -50,6 +12,9 @@
     <div class="col-lg-6">
       <h4>The result</h4>
       <pre *ngIf="billingForm">{{ billingForm | json }}</pre>
+
+
+      <pre *ngIf="paymentDetailsForm">{{ paymentDetailsForm | json }}</pre>
     </div>
   </div>
 </main>

@@ -1,4 +1,4 @@
-import {SelectItem} from "../select/select-item";
+import {SelectItem} from "../components/select/select-item";
 
 const countryOptions: SelectItem[] = [
   {label: 'Choose', value: ''},

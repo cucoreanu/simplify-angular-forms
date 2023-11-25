@@ -1,15 +1,15 @@
 import {Component, Output} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {BigFormSection} from "../big-form-section.model";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {TextInputComponent} from "../text-input/text-input.component";
-import {SelectComponent} from "../select/select.component";
 import {getCountries} from "./country-options";
 import {getUsStateOptions} from "./us-states-options";
-import {CheckboxComponent} from "../checkbox/checkbox.component";
 import {BillingForm} from "./billing-form.model";
 import {OnlyKeysOf} from "../only-keys-of.type";
-import {ValidationResultComponent} from "../validation-result/validation-result.component";
+import {TextInputComponent} from "../components/text-input/text-input.component";
+import {SelectComponent} from "../components/select/select.component";
+import {CheckboxComponent} from "../components/checkbox/checkbox.component";
+import {ValidationResultComponent} from "../components/validation-result/validation-result.component";
+import {BigFormSection} from "../big-form.section";
 
 @Component({
   selector: 'big-billing-address-form',

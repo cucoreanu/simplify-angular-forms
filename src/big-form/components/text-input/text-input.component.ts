@@ -23,5 +23,6 @@ export class TextInputComponent extends FormControlValueAccessorComponent<string
   @Input() label = '';
   @Input() placeholder = '';
   @Input() inputGroupText = '';
+  @Input() controlFooterInfo = '';
 
 }

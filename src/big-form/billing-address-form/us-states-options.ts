@@ -1,4 +1,4 @@
-import {SelectItem} from "../select/select-item";
+import {SelectItem} from "../components/select/select-item";
 
 const usStatesOptions: SelectItem[] = [
   {label: 'Choose', value: ''},
