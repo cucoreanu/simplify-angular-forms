@@ -1,7 +1,7 @@
 import {Component, forwardRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CheckboxComponent} from "../../big-form/components/checkbox/checkbox.component";
-import {FormsModule, NG_VALUE_ACCESSOR, NgForm, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule} from "@angular/forms";
 import {SelectComponent} from "../../big-form/components/select/select.component";
 import {TextInputComponent} from "../../big-form/components/text-input/text-input.component";
 import {ValidationResultComponent} from "../../big-form/components/validation-result/validation-result.component";

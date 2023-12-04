@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterOutlet} from '@angular/router';
 import {ReactiveFormsModule} from "@angular/forms";
 import {BillingAddressFormComponent} from "./billing-address-form/billing-address-form.component";
 import {BillingForm} from "./billing-address-form/billing-form.model";
