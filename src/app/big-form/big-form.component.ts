@@ -11,7 +11,7 @@ import {PaymentDetailsForm} from "./payment-details-form/payment-details-form.mo
 @Component({
   selector: 'big-form',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TextInputComponent, ReactiveFormsModule, BillingAddressFormComponent, PaymentDetailsFormComponent],
+  imports: [CommonModule, TextInputComponent, ReactiveFormsModule, BillingAddressFormComponent, PaymentDetailsFormComponent],
   templateUrl: './big-form.component.html',
   styleUrls: ['./big-form.component.scss']
 })
