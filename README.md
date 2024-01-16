@@ -1,4 +1,6 @@
-# AngularForms
+# Simplify Angular Forms
+
+This repo contains the files from my [YouTube](https://www.youtube.com/watch?v=Gl8Z6dKnuSQ) video about Angular forms.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
